@@ -1,0 +1,119 @@
+<main class="min-h-screen bg-background flex flex-col items-center">
+  <!-- Top Header -->
+  <header class="w-full flex justify-between items-center px-8 py-6 mb-12 animate-vault-entry">
+    <div class="text-primary font-bold text-xl italic tracking-tight">The Kinetic Vault</div>
+    <div class="flex items-center gap-6">
+      <button class="text-on-surface-variant hover:text-on-surface transition-colors">
+        <span class="icon-[lucide--circle-help] w-5 h-5"></span>
+      </button>
+      <button class="text-on-surface-variant hover:text-on-surface transition-colors">
+        <span class="icon-[lucide--circle-user-round] w-5 h-5"></span>
+      </button>
+      <button class="text-on-surface-variant hover:text-on-surface transition-colors">
+        <span class="icon-[lucide--log-out] w-5 h-5"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Title Section -->
+  <section class="flex flex-col items-center text-center mb-16 animate-vault-entry">
+    <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-on-surface display-txt">SELECT BUSINESS UNIT</h1>
+    <p class="text-on-surface-variant max-w-lg mx-auto text-lg">
+      Choose an entity to access your secure financial environment.
+    </p>
+  </section>
+
+  <!-- Cards Grid -->
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1100px] w-full px-6 mb-24 animate-vault-entry"
+    style="animation-delay: 0.1s;">
+
+    <!-- Card 1 -->
+    <button
+      class="vault-card hover:vault-card-elevated transition-all text-left flex flex-col items-start gap-4 h-full border border-transparent hover:border-white/5 relative group">
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-transparent rounded-lg transition-colors pointer-events-none">
+      </div>
+      <div class="w-12 h-12 rounded-xl bg-background flex items-center justify-center shadow-inner">
+        <span class="icon-[lucide--landmark] w-6 h-6 text-primary"></span>
+      </div>
+      <div class="mt-4 z-10">
+        <p class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-1 font-medium">Corporate Registry</p>
+        <h2 class="text-xl font-bold text-on-surface mb-2">Banco Mercantil</h2>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Global Trading & Asset Management Protocol</p>
+      </div>
+    </button>
+
+    <!-- Card 2 -->
+    <button
+      class="vault-card hover:vault-card-elevated transition-all text-left flex flex-col items-start gap-4 h-full border border-transparent hover:border-white/5 relative group">
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-secondary/0 to-secondary/0 group-hover:from-secondary/5 group-hover:to-transparent rounded-lg transition-colors pointer-events-none">
+      </div>
+      <div class="w-12 h-12 rounded-xl bg-background flex items-center justify-center shadow-inner">
+        <span class="icon-[lucide--refresh-cw] w-6 h-6 text-secondary"></span>
+      </div>
+      <div class="mt-4 z-10">
+        <p class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-1 font-medium">Community Credit</p>
+        <h2 class="text-xl font-bold text-on-surface mb-2">Cooperativa San José</h2>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Regional Cooperative Liquidity Engine</p>
+      </div>
+    </button>
+
+    <!-- Card 3 -->
+    <button
+      class="vault-card hover:vault-card-elevated transition-all text-left flex flex-col items-start gap-4 h-full border border-transparent hover:border-white/5 relative group">
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-tertiary/0 to-tertiary/0 group-hover:from-tertiary/5 group-hover:to-transparent rounded-lg transition-colors pointer-events-none">
+      </div>
+      <div class="w-12 h-12 rounded-xl bg-background flex items-center justify-center shadow-inner">
+        <span class="icon-[lucide--landmark] w-6 h-6 text-tertiary"></span>
+        <div
+          class="absolute w-3 h-3 bg-background rounded-full bottom-[10px] right-[10px] flex items-center justify-center">
+          <span
+            class="icon-[lucide--shield-check] w-4 h-4 text-tertiary absolute top-1 left-2 bg-background rounded-full"></span>
+        </div>
+      </div>
+      <div class="mt-4 z-10">
+        <p class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-1 font-medium">National Infrastructure
+        </p>
+        <h2 class="text-xl font-bold text-on-surface mb-2">Financiera Nacional</h2>
+        <p class="text-sm text-on-surface-variant leading-relaxed">State-Level Fiscal Security Operations</p>
+      </div>
+    </button>
+
+    <!-- Card 4 (Add New) -->
+    <button
+      class="vault-card bg-transparent border-2 border-dashed border-surface-highest hover:border-primary/30 transition-all text-left flex flex-col items-start gap-4 h-full relative group">
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-transparent rounded-lg transition-colors pointer-events-none">
+      </div>
+      <div
+        class="w-12 h-12 rounded-xl bg-surface-lowest flex items-center justify-center shadow-inner group-hover:bg-surface-high transition-colors">
+        <span class="icon-[lucide--plus] w-6 h-6 text-primary"></span>
+      </div>
+      <div class="mt-4 z-10">
+        <p class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-1 font-medium">Administrative Action
+        </p>
+        <h2 class="text-xl font-bold text-on-surface mb-2">Add New Entity</h2>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Provision a new secure financial environment protocol
+        </p>
+      </div>
+    </button>
+
+  </section>
+
+  <!-- Status Indicator -->
+  <div class="flex justify-center mt-auto mb-16 animate-vault-entry" style="animation-delay: 0.2s;">
+    <div class="bg-surface-highest/40 px-6 py-3 rounded-full flex items-center gap-3 border border-white/5 shadow-sm">
+      <div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+      <span class="text-sm text-on-surface-variant font-medium">Security Status: Authenticated. Session will expire in
+        04:59.</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer
+    class="w-full flex flex-col md:flex-row justify-between items-center p-8 border-t border-white/5 text-[10px] text-on-surface-variant font-semibold tracking-wider mt-auto bg-surface-lowest/50">
+    <div class="mb-4 md:mb-0">© 2024 CARLOS ANTONIO MOGROVEJO FERNANDEZ. ALL RIGHTS RESERVED.</div>
+  </footer>
+</main>

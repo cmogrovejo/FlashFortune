@@ -2,38 +2,36 @@
   <!-- Header: Logo Area -->
   <header class="flex flex-col items-center mb-8 animate-vault-entry">
     <div class="w-16 h-16 bg-surface-highest rounded-2xl flex items-center justify-center mb-4 border border-white/5">
-      <svg class="w-8 h-8 text-primary" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-        fill="currentColor" viewBox="0 0 24 24">
-        <path fill-rule="evenodd"
-          d="M8 10V7a4 4 0 1 1 8 0v3h1a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h1Zm2-3a2 2 0 1 1 4 0v3h-4V7Zm2 6a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1Z"
-          clip-rule="evenodd" />
-      </svg>
+      <span class="icon-[lucide--lock] w-8 h-8 text-primary" aria-hidden="true"></span>
     </div>
     <h1 class="text-3xl font-bold tracking-tight display-txt">
-      <span class="text-on-surface">Moonshot</span><span class="text-primary">Bank</span>
+      <span class="text-on-surface">Flash</span><span class="text-primary">Fortune</span>
     </h1>
-    <p class="text-on-surface-variant text-xs mt-2 uppercase tracking-[0.1em]">The Kinetic Vault &bull; Secure Raffle
-      Management</p>
+    <p class="text-on-surface-variant text-xs mt-2 uppercase tracking-widest">A Financial Raffle
+      Management System</p>
   </header>
 
   <!-- Login Card -->
   <section class="vault-card w-full max-w-md animate-vault-entry">
     <div class="mb-6">
-      <h2 class="text-xl font-medium text-on-surface">Corporate Access</h2>
+      <h2 class="text-xl font-medium text-on-surface">System Access</h2>
       <p class="text-sm text-on-surface-variant mt-1">Please enter your authorized credentials.</p>
     </div>
 
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-5">
 
+
+
+
       <!-- Email Field -->
       <div class="flex flex-col gap-1.5">
         <label for="email" class="label-txt text-xs text-on-surface-variant">Corporate Email</label>
         <div class="relative flex items-center">
-          <div class="absolute left-4 text-on-surface-variant select-none">
-            &#64;
+          <div class="absolute left-4 text-on-surface-variant select-none flex items-center">
+            <span class="icon-[lucide--mail] w-4 h-4"></span>
           </div>
           <input type="email" id="email" formControlName="email" class="vault-input w-full pl-10"
-            placeholder="user@moonshotbank.com">
+            placeholder="user@company.com">
         </div>
       </div>
 
@@ -41,13 +39,8 @@
       <div class="flex flex-col gap-1.5">
         <label for="password" class="label-txt text-xs text-on-surface-variant">Password</label>
         <div class="relative flex items-center">
-          <div class="absolute left-4 text-on-surface-variant">
-            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-              fill="currentColor" viewBox="0 0 24 24">
-              <path fill-rule="evenodd"
-                d="M14 7a4 4 0 0 0-6.824-2.824 4.004 4.004 0 0 0 .178 5.82C6.913 10.428 6.549 11 6 11c-.552 0-1-.448-1-1 0-.552-.448-1-1-1s-1 .448-1 1A3 3 0 0 0 6 13h1v3a1 1 0 0 0 1 1h1v1a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-1v-2h1a5 5 0 0 0 2.213-.518 4 4 0 0 0-.037-7.306Zm-3-1a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"
-                clip-rule="evenodd" />
-            </svg>
+          <div class="absolute left-4 text-on-surface-variant flex items-center">
+            <span class="icon-[lucide--key] w-4 h-4" aria-hidden="true"></span>
           </div>
           <input [type]="isPasswordVisible ? 'text' : 'password'" id="password" formControlName="password"
             class="vault-input w-full px-10" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;">
@@ -55,19 +48,10 @@
             class="absolute right-4 text-on-surface-variant hover:text-on-surface transition-colors">
             <!-- Eye Show -->
             @if(isPasswordVisible) {
-            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-              fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M3.933 13.909A4.357 4.357 0 0 1 3 12c0-1 4-6 9-6m7.6 3.8A5.068 5.068 0 0 1 21 12c0 1-3 6-9 6-.314 0-.62-.014-.918-.04M5 19 19 5m-4 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-            </svg>
+            <span class="icon-[lucide--eye-off] w-4 h-4" aria-hidden="true"></span>
             } @else {
             <!-- Eye Hide -->
-            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-              fill="currentColor" viewBox="0 0 24 24">
-              <path fill-rule="evenodd"
-                d="M4.998 7.78C6.729 6.345 9.198 5 12 5c2.802 0 5.27 1.345 7.002 2.78a12.713 12.713 0 0 1 2.096 2.183c.253.344.465.682.618.997.14.286.284.658.284 1.04s-.145.754-.284 1.04a6.6 6.6 0 0 1-.618.997 12.712 12.712 0 0 1-2.096 2.183C17.271 17.655 14.802 19 12 19c-2.802 0-5.27-1.345-7.002-2.78a12.712 12.712 0 0 1-2.096-2.183 6.6 6.6 0 0 1-.618-.997C2.144 12.754 2 12.382 2 12s.145-.754.284-1.04c.153-.315.365-.653.618-.997A12.714 12.714 0 0 1 4.998 7.78ZM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
-                clip-rule="evenodd" />
-            </svg>
+            <span class="icon-[lucide--eye] w-4 h-4" aria-hidden="true"></span>
             }
           </button>
         </div>
@@ -76,56 +60,57 @@
       <!-- Submit Button -->
       <button [disabled]="loginForm.invalid" type="submit"
         class="btn btn-primary w-full mt-2 py-3 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed text-base shadow-[0_0_15px_-3px_var(--color-primary-container)]">
-        <svg class="w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-          fill="none" viewBox="0 0 24 24">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M12 21a9 9 0 1 1 0-18c1.052 0 2.062.18 3 .512M7 9.577l3.923 3.923 8.5-8.5M17 14v6m-3-3h6" />
-        </svg>
-        Ingresar
+        <span class="icon-[lucide--log-in] w-4 h-4 mr-2" aria-hidden="true"></span>
+        Login
       </button>
 
       <!-- Divider -->
-      <div class="relative flex py-4 items-center mt-2">
-        <div class="flex-grow border-t border-slate-500/15"></div>
-        <span class="flex-shrink-0 mx-4 text-on-surface-variant text-[10px] uppercase tracking-wider">O continuar
-          con</span>
-        <div class="flex-grow border-t border-slate-500/15"></div>
+      <div class="relative flex py-2 items-center">
+        <div class="grow border-t border-slate-500/15"></div>
+        <span class="shrink-0 mx-4 text-on-surface-variant text-[10px] uppercase tracking-wider">Or continue with
+          other methods</span>
+        <div class="grow border-t border-slate-500/15"></div>
       </div>
-
       <!-- Social Providers -->
-      <div class="flex justify-between gap-3">
+      <div class="grid grid-cols-3 gap-3">
         <!-- Google -->
         <button type="button"
-          class="flex-1 bg-surface-highest/30 hover:bg-surface-highest/60 transition-colors py-3 border border-slate-500/15 rounded-xl flex items-center justify-center text-on-surface">
-          <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-            viewBox="0 0 24 24">
-            <path fill-rule="evenodd"
-              d="M12.037 21.998a10.313 10.313 0 0 1-7.168-3.049 9.888 9.888 0 0 1-2.868-7.118 9.947 9.947 0 0 1 3.064-6.949A10.37 10.37 0 0 1 12.212 2h.176a9.935 9.935 0 0 1 6.614 2.564L16.457 6.88a6.187 6.187 0 0 0-4.131-1.566 6.9 6.9 0 0 0-4.794 1.913 6.618 6.618 0 0 0-2.045 4.657 6.608 6.608 0 0 0 1.879 4.722 6.875 6.875 0 0 0 4.956 1.875 6.832 6.832 0 0 0 4.812-1.794 6.68 6.68 0 0 0 2.058-4.212h-6.825v-3.32h10.459c.075.697.11 1.396.105 2.1a10.322 10.322 0 0 1-2.923 7.391 10.015 10.015 0 0 1-7.513 3.32h-.105Z"
-              clip-rule="evenodd" />
-          </svg>
+          class="group bg-surface-highest/30 hover:bg-surface-highest/60 focus:bg-surface-highest/60 outline-none border border-primary/15 hover:border-primary/50 focus:border-primary/50 shadow-[0_0_15px_-3px_rgba(0,0,0,0)] hover:shadow-[0_0_15px_-3px_var(--color-primary-container)] focus:shadow-[0_0_15px_-3px_var(--color-primary-container)] transition-all duration-300 py-3 rounded-xl flex items-center justify-center relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-transparent transition-colors">
+          </div>
+          <span
+            class="icon-[fa6-brands--google] w-5 h-5 text-on-surface-variant group-hover:text-primary group-focus:text-primary transition-colors relative z-10"
+            aria-hidden="true"></span>
         </button>
 
         <!-- Apple ID -->
         <button type="button"
-          class="flex-[1.5] bg-surface-highest/30 hover:bg-surface-highest/60 transition-colors py-3 border border-slate-500/15 rounded-xl flex items-center justify-center text-on-surface">
-          <span class="font-medium tracking-wide">APPLE</span>
+          class="group bg-surface-highest/30 hover:bg-surface-highest/60 focus:bg-surface-highest/60 outline-none border border-primary/15 hover:border-primary/50 focus:border-primary/50 shadow-[0_0_15px_-3px_rgba(0,0,0,0)] hover:shadow-[0_0_15px_-3px_var(--color-primary-container)] focus:shadow-[0_0_15px_-3px_var(--color-primary-container)] transition-all duration-300 py-3 rounded-xl flex items-center justify-center relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-transparent transition-colors">
+          </div>
+          <span
+            class="icon-[fa6-brands--apple] w-5 h-5 text-on-surface-variant group-hover:text-primary group-focus:text-primary transition-colors relative z-10"
+            aria-hidden="true"></span>
         </button>
 
         <!-- Facebook -->
         <button type="button"
-          class="flex-1 bg-surface-highest/30 hover:bg-surface-highest/60 transition-colors py-3 border border-slate-500/15 rounded-xl flex items-center justify-center text-on-surface">
-          <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-            viewBox="0 0 24 24">
-            <path fill-rule="evenodd"
-              d="M13.135 6H151M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
-              clip-rule="evenodd" />
-          </svg>
+          class="group bg-surface-highest/30 hover:bg-surface-highest/60 focus:bg-surface-highest/60 outline-none border border-primary/15 hover:border-primary/50 focus:border-primary/50 shadow-[0_0_15px_-3px_rgba(0,0,0,0)] hover:shadow-[0_0_15px_-3px_var(--color-primary-container)] focus:shadow-[0_0_15px_-3px_var(--color-primary-container)] transition-all duration-300 py-3 rounded-xl flex items-center justify-center relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-transparent transition-colors">
+          </div>
+          <span
+            class="icon-[fa6-brands--facebook] w-5 h-5 text-on-surface-variant group-hover:text-primary group-focus:text-primary transition-colors relative z-10"
+            aria-hidden="true"></span>
         </button>
       </div>
 
+
       <!-- Forgot Password -->
       <div class="mt-4 text-center">
-        <a href="#" class="text-tertiary hover:text-white transition-colors text-xs font-medium">¿Olvidó su contraseña?
+        <a href="#" class="text-tertiary hover:text-white transition-colors text-xs font-medium">Forgot your password?
           &rarr;</a>
       </div>
 
@@ -135,34 +120,9 @@
   <!-- Footer Info -->
   <footer class="mt-12 flex flex-col items-center gap-4 animate-vault-entry">
     <div class="flex items-center gap-6">
-      <div class="flex-grow border-t border-white/5 w-12"></div>
-      <div class="flex gap-4 text-on-surface-variant">
-        <!-- Shield -->
-        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-          fill="currentColor" viewBox="0 0 24 24">
-          <path fill-rule="evenodd"
-            d="M11.644 3.066a1 1 0 0 1 .712 0l7 2.666A1 1 0 0 1 20 6.68a17.694 17.694 0 0 1-2.023 7.98 17.406 17.406 0 0 1-5.402 6.158 1 1 0 0 1-1.15 0 17.405 17.405 0 0 1-5.403-6.157A17.695 17.695 0 0 1 4 6.68a1 1 0 0 1 .644-.948l7-2.666Zm3.308 5.76a1 1 0 1 0-1.272-1.516l-3.236 2.716-1.365-1.528a1 1 0 1 0-1.492 1.332l2.128 2.38a1 1 0 0 0 1.488.026l3.749-3.11Z"
-            clip-rule="evenodd" />
-        </svg>
-        <!-- Lock Secure -->
-        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-          viewBox="0 0 24 24">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M12 14v3m-3-6V7a3 3 0 1 1 6 0v4m-8 0h10a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1Z" />
-        </svg>
-        <!-- Fingerprint / Id -->
-        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-          fill="currentColor" viewBox="0 0 24 24">
-          <path fill-rule="evenodd"
-            d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
-            clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div class="flex-grow border-t border-white/5 w-12"></div>
+      <div class="grow border-t border-white/5 w-12"></div>
+      <div class="flex gap-4 text-on-surface-variant"></div>
+      <div class="grow border-t border-white/5 w-12"></div>
     </div>
-
-    <p class="text-[0.65rem] text-on-surface-variant max-w-xs text-center leading-relaxed font-light">
-      Este es un sistema restringido. El acceso no autorizado está estrictamente prohibido y sujeto a monitoreo.
-    </p>
   </footer>
 </main>

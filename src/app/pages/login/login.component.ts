@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -10,6 +11,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 export class LoginComponent {
   loginForm: FormGroup;
   isPasswordVisible = false;
+  private router = inject(Router);
 
   constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
@@ -23,8 +25,7 @@ export class LoginComponent {
   }
 
   onSubmit(): void {
-    if (this.loginForm.valid) {
-      console.log('Login logic here...', this.loginForm.value);
-    }
+    // Hardcoded navigation to the new page for now
+    this.router.navigate(['/business-unit']);
   }
 }
