@@ -1,11 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SocialProviderButton } from '../../shared/components/social-provider-button/social-provider-button';
+import { VaultInputWrapper } from '../../shared/components/vault-input-wrapper/vault-input-wrapper';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, SocialProviderButton, VaultInputWrapper],
   templateUrl: './login.component.html'
 })
 export class LoginComponent {

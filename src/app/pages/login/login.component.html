@@ -24,38 +24,26 @@
 
 
       <!-- Email Field -->
-      <div class="flex flex-col gap-1.5">
-        <label for="email" class="label-txt text-xs text-on-surface-variant">Corporate Email</label>
-        <div class="relative flex items-center">
-          <div class="absolute left-4 text-on-surface-variant select-none flex items-center">
-            <span class="icon-[lucide--mail] w-4 h-4"></span>
-          </div>
-          <input type="email" id="email" formControlName="email" class="vault-input w-full pl-10"
-            placeholder="user@company.com">
-        </div>
-      </div>
+      <app-vault-input-wrapper label="Corporate Email" forId="email" startIcon="icon-[lucide--mail]">
+        <input type="email" id="email" formControlName="email" class="vault-input w-full pl-10"
+          placeholder="user@company.com">
+      </app-vault-input-wrapper>
 
       <!-- Password Field -->
-      <div class="flex flex-col gap-1.5">
-        <label for="password" class="label-txt text-xs text-on-surface-variant">Password</label>
-        <div class="relative flex items-center">
-          <div class="absolute left-4 text-on-surface-variant flex items-center">
-            <span class="icon-[lucide--key] w-4 h-4" aria-hidden="true"></span>
-          </div>
-          <input [type]="isPasswordVisible ? 'text' : 'password'" id="password" formControlName="password"
-            class="vault-input w-full px-10" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;">
-          <button type="button" (click)="togglePasswordVisibility()"
-            class="absolute right-4 text-on-surface-variant hover:text-on-surface transition-colors">
-            <!-- Eye Show -->
-            @if(isPasswordVisible) {
-            <span class="icon-[lucide--eye-off] w-4 h-4" aria-hidden="true"></span>
-            } @else {
-            <!-- Eye Hide -->
-            <span class="icon-[lucide--eye] w-4 h-4" aria-hidden="true"></span>
-            }
-          </button>
-        </div>
-      </div>
+      <app-vault-input-wrapper label="Password" forId="password" startIcon="icon-[lucide--key]">
+        <input [type]="isPasswordVisible ? 'text' : 'password'" id="password" formControlName="password"
+          class="vault-input w-full px-10" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;">
+        <button type="button" (click)="togglePasswordVisibility()"
+          class="absolute right-4 text-on-surface-variant hover:text-on-surface transition-colors z-10">
+          <!-- Eye Show -->
+          @if(isPasswordVisible) {
+          <span class="icon-[lucide--eye-off] w-4 h-4" aria-hidden="true"></span>
+          } @else {
+          <!-- Eye Hide -->
+          <span class="icon-[lucide--eye] w-4 h-4" aria-hidden="true"></span>
+          }
+        </button>
+      </app-vault-input-wrapper>
 
       <!-- Submit Button -->
       <button [disabled]="loginForm.invalid" type="submit"
@@ -74,37 +62,13 @@
       <!-- Social Providers -->
       <div class="grid grid-cols-3 gap-3">
         <!-- Google -->
-        <button type="button"
-          class="group bg-surface-highest/30 hover:bg-surface-highest/60 focus:bg-surface-highest/60 outline-none border border-primary/15 hover:border-primary/50 focus:border-primary/50 shadow-[0_0_15px_-3px_rgba(0,0,0,0)] hover:shadow-[0_0_15px_-3px_var(--color-primary-container)] focus:shadow-[0_0_15px_-3px_var(--color-primary-container)] transition-all duration-300 py-3 rounded-xl flex items-center justify-center relative overflow-hidden">
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-transparent transition-colors">
-          </div>
-          <span
-            class="icon-[fa6-brands--google] w-5 h-5 text-on-surface-variant group-hover:text-primary group-focus:text-primary transition-colors relative z-10"
-            aria-hidden="true"></span>
-        </button>
+        <app-social-provider-button icon="icon-[fa6-brands--google]"></app-social-provider-button>
 
         <!-- Apple ID -->
-        <button type="button"
-          class="group bg-surface-highest/30 hover:bg-surface-highest/60 focus:bg-surface-highest/60 outline-none border border-primary/15 hover:border-primary/50 focus:border-primary/50 shadow-[0_0_15px_-3px_rgba(0,0,0,0)] hover:shadow-[0_0_15px_-3px_var(--color-primary-container)] focus:shadow-[0_0_15px_-3px_var(--color-primary-container)] transition-all duration-300 py-3 rounded-xl flex items-center justify-center relative overflow-hidden">
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-transparent transition-colors">
-          </div>
-          <span
-            class="icon-[fa6-brands--apple] w-5 h-5 text-on-surface-variant group-hover:text-primary group-focus:text-primary transition-colors relative z-10"
-            aria-hidden="true"></span>
-        </button>
+        <app-social-provider-button icon="icon-[fa6-brands--apple]"></app-social-provider-button>
 
         <!-- Facebook -->
-        <button type="button"
-          class="group bg-surface-highest/30 hover:bg-surface-highest/60 focus:bg-surface-highest/60 outline-none border border-primary/15 hover:border-primary/50 focus:border-primary/50 shadow-[0_0_15px_-3px_rgba(0,0,0,0)] hover:shadow-[0_0_15px_-3px_var(--color-primary-container)] focus:shadow-[0_0_15px_-3px_var(--color-primary-container)] transition-all duration-300 py-3 rounded-xl flex items-center justify-center relative overflow-hidden">
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-transparent transition-colors">
-          </div>
-          <span
-            class="icon-[fa6-brands--facebook] w-5 h-5 text-on-surface-variant group-hover:text-primary group-focus:text-primary transition-colors relative z-10"
-            aria-hidden="true"></span>
-        </button>
+        <app-social-provider-button icon="icon-[fa6-brands--facebook]"></app-social-provider-button>
       </div>
 
 
