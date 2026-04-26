@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Header } from '../../shared/components/header/header';
 import { Footer } from '../../shared/components/footer/footer';
 import { BusinessUnitCard } from './components/business-unit-card/business-unit-card';
+import { Router } from '@angular/router';
 
 export interface BusinessUnit {
   title: string;
@@ -21,6 +22,13 @@ export interface BusinessUnit {
   templateUrl: './business-unit.component.html'
 })
 export class BusinessUnitComponent {
+  constructor(private router: Router) { }
+
+  onCardClick(unit: BusinessUnit) {
+    if (unit.isAddNew) {
+      this.router.navigate(['/add-business-unit']);
+    }
+  }
   businessUnits: BusinessUnit[] = [
     {
       title: 'Banco Mercantil',

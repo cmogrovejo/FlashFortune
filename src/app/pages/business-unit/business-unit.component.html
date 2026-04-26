@@ -22,7 +22,9 @@
       [icon]="unit.icon"
       [theme]="unit.theme"
       [isAddNew]="unit.isAddNew"
-      [hasShield]="unit.hasShield || false">
+      [hasShield]="unit.hasShield || false"
+      (click)="onCardClick(unit)"
+      [class.cursor-pointer]="unit.isAddNew">
     </app-business-unit-card>
 
   </section>
