@@ -1,40 +1,46 @@
 <!-- Normal Card -->
-<button *ngIf="!isAddNew"
-  class="vault-card hover:vault-card-elevated transition-all text-left flex flex-col items-start gap-4 h-full border border-transparent hover:border-white/5 relative group">
-  <div class="absolute inset-0 bg-gradient-to-br rounded-lg transition-colors pointer-events-none"
-       [ngClass]="{
+@if (!isAddNew) {
+  <button
+    class="vault-card hover:vault-card-elevated transition-all text-left flex flex-col items-start gap-4 h-full border border-transparent hover:border-white/5 relative group">
+  <div class="absolute inset-0 bg-gradient-to-br rounded-lg transition-colors pointer-events-none" [ngClass]="{
          'from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-transparent': theme === 'primary',
          'from-secondary/0 to-secondary/0 group-hover:from-secondary/5 group-hover:to-transparent': theme === 'secondary',
          'from-tertiary/0 to-tertiary/0 group-hover:from-tertiary/5 group-hover:to-transparent': theme === 'tertiary'
        }">
-  </div>
-  <div class="w-12 h-12 rounded-xl bg-background flex items-center justify-center shadow-inner relative">
-    <span class="w-6 h-6" [ngClass]="[icon, 'text-' + theme]"></span>
-    <div *ngIf="hasShield"
-      class="absolute w-3 h-3 bg-background rounded-full bottom-[-2px] right-[-2px] flex items-center justify-center">
-      <span class="icon-[lucide--shield-check] w-4 h-4 absolute top-0 left-0 bg-background rounded-full" [ngClass]="'text-' + theme"></span>
     </div>
-  </div>
-  <div class="mt-4 z-10">
-    <p class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-1 font-medium">{{ category }}</p>
-    <h2 class="text-xl font-bold text-on-surface mb-2">{{ title }}</h2>
-    <p class="text-sm text-on-surface-variant leading-relaxed">{{ subtitle }}</p>
-  </div>
-</button>
+    <div class="w-12 h-12 rounded-xl bg-background flex items-center justify-center shadow-inner relative">
+      <span class="w-6 h-6" [ngClass]="[icon, 'text-' + theme]"></span>
+      @if (hasShield) {
+        <div
+          class="absolute w-3 h-3 bg-background rounded-full bottom-[-2px] right-[-2px] flex items-center justify-center">
+          <span class="icon-[lucide--shield-check] w-4 h-4 absolute top-0 left-0 bg-background rounded-full"
+          [ngClass]="'text-' + theme"></span>
+        </div>
+      }
+    </div>
+    <div class="mt-4 z-10">
+      <p class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-1 font-medium">{{ category }}</p>
+      <h2 class="text-xl font-bold text-on-surface mb-2">{{ title }}</h2>
+      <p class="text-sm text-on-surface-variant leading-relaxed">{{ subtitle }}</p>
+    </div>
+  </button>
+}
 
 <!-- Add New Card -->
-<button *ngIf="isAddNew"
-  class="vault-card bg-transparent border-2 border-dashed border-surface-highest hover:border-primary/30 transition-all text-left flex flex-col items-start gap-4 h-full relative group">
-  <div
-    class="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-transparent rounded-lg transition-colors pointer-events-none">
-  </div>
-  <div
-    class="w-12 h-12 rounded-xl bg-surface-lowest flex items-center justify-center shadow-inner group-hover:bg-surface-high transition-colors">
-    <span class="icon-[lucide--plus] w-6 h-6 text-primary"></span>
-  </div>
-  <div class="mt-4 z-10">
-    <p class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-1 font-medium">{{ category }}</p>
-    <h2 class="text-xl font-bold text-on-surface mb-2">{{ title }}</h2>
-    <p class="text-sm text-on-surface-variant leading-relaxed">{{ subtitle }}</p>
-  </div>
-</button>
+@if (isAddNew) {
+  <button
+    class="vault-card bg-transparent border-2 border-dashed border-surface-highest hover:border-primary/30 transition-all text-left flex flex-col items-start gap-4 h-full relative group">
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-transparent rounded-lg transition-colors pointer-events-none">
+    </div>
+    <div
+      class="w-12 h-12 rounded-xl bg-surface-lowest flex items-center justify-center shadow-inner group-hover:bg-surface-high transition-colors">
+      <span class="icon-[lucide--plus] w-6 h-6 text-primary"></span>
+    </div>
+    <div class="mt-4 z-10">
+      <p class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-1 font-medium">{{ category }}</p>
+      <h2 class="text-xl font-bold text-on-surface mb-2">{{ title }}</h2>
+      <p class="text-sm text-on-surface-variant leading-relaxed">{{ subtitle }}</p>
+    </div>
+  </button>
+}

@@ -14,18 +14,12 @@
   <section class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1100px] w-full px-6 mb-24 animate-vault-entry"
     style="animation-delay: 0.1s;">
 
-    <app-business-unit-card 
-      *ngFor="let unit of businessUnits"
-      [title]="unit.title"
-      [subtitle]="unit.subtitle"
-      [category]="unit.category"
-      [icon]="unit.icon"
-      [theme]="unit.theme"
-      [isAddNew]="unit.isAddNew"
-      [hasShield]="unit.hasShield || false"
-      (click)="onCardClick(unit)"
-      [class.cursor-pointer]="unit.isAddNew">
-    </app-business-unit-card>
+    @for (unit of businessUnits; track unit) {
+      <app-business-unit-card [title]="unit.title" [subtitle]="unit.subtitle"
+        [category]="unit.category" [icon]="unit.icon" [theme]="unit.theme" [isAddNew]="unit.isAddNew"
+        [hasShield]="unit.hasShield || false" (click)="onCardClick(unit)" class="cursor-pointer">
+      </app-business-unit-card>
+    }
 
   </section>
 
@@ -34,7 +28,7 @@
     <div class="bg-surface-highest/40 px-6 py-3 rounded-full flex items-center gap-3 border border-white/5 shadow-sm">
       <div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
       <span class="text-sm text-on-surface-variant font-medium">Security Status: Authenticated. Session will expire in
-        04:59.</span>
+      04:59.</span>
     </div>
   </div>
 

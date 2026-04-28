@@ -1,0 +1,68 @@
+<div class="min-h-screen bg-background flex">
+  <!-- Sidebar -->
+  <app-dashboard-sidebar></app-dashboard-sidebar>
+
+  <!-- Main Content Area -->
+  <div class="flex-1 ml-64 flex flex-col">
+    <app-dashboard-top-nav></app-dashboard-top-nav>
+
+    <!-- Page Content -->
+    <main class="flex-1 p-8 lg:p-12 overflow-x-hidden">
+      <!-- Breadcrumbs -->
+      <div class="flex items-center gap-2 text-sm mb-6">
+        <span class="text-on-surface-variant">Business Unit</span>
+        <span class="icon-[lucide--chevron-right] w-4 h-4 text-on-surface-variant"></span>
+        <span class="text-primary font-bold">Dashboard</span>
+      </div>
+
+      <!-- Header Row -->
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-10">
+        <div class="flex items-center gap-6 flex-wrap">
+          <h2 class="text-4xl font-bold tracking-tight text-on-surface">Raffle Dashboard</h2>
+
+          <!-- Metric Pills -->
+          <div class="flex items-center gap-3 mt-1">
+            <div class="bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-xl flex items-center gap-2">
+              <span class="text-blue-400 font-bold text-lg">3</span>
+              <span class="text-on-surface-variant text-xs font-bold tracking-widest uppercase">Soon</span>
+            </div>
+            <div class="bg-primary/10 border border-primary/20 px-4 py-2 rounded-xl flex items-center gap-2">
+              <span class="text-primary font-bold text-lg">1</span>
+              <span class="text-on-surface-variant text-xs font-bold tracking-widest uppercase">Active</span>
+            </div>
+            <div class="bg-surface-higher border border-white/5 px-4 py-2 rounded-xl flex items-center gap-2">
+              <span class="text-on-surface font-bold text-lg">14</span>
+              <span class="text-on-surface-variant text-xs font-bold tracking-widest uppercase">Ended</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <!-- View Toggles (Visual only for now) -->
+          <div class="flex items-center bg-surface-higher border border-white/5 rounded-xl p-1">
+            <button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors">
+              <span class="icon-[lucide--layout-grid] w-5 h-5"></span>
+            </button>
+            <button class="p-2 rounded-lg bg-surface text-primary shadow-sm border border-white/5">
+              <span class="icon-[lucide--list] w-5 h-5"></span>
+            </button>
+          </div>
+
+          <!-- Action Button -->
+          <button
+            class="bg-primary hover:bg-primary-hover text-surface-highest font-bold py-3 px-6 rounded-xl flex items-center gap-2 transition-all shadow-lg shadow-primary/20 active:scale-[0.98]">
+            <span class="icon-[lucide--plus] w-5 h-5"></span>
+            New Raffle
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter Bar -->
+      <app-raffle-filter-bar class="block mb-6"></app-raffle-filter-bar>
+
+      <!-- Table List View -->
+      <app-raffle-table class="block mb-16"></app-raffle-table>
+
+    </main>
+  </div>
+</div>

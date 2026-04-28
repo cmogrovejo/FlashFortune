@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Header } from '../../shared/components/header/header';
 import { Footer } from '../../shared/components/footer/footer';
 import { BusinessUnitCard } from './components/business-unit-card/business-unit-card';
@@ -18,7 +18,7 @@ export interface BusinessUnit {
 @Component({
   selector: 'app-business-unit',
   standalone: true,
-  imports: [CommonModule, Header, Footer, BusinessUnitCard],
+  imports: [Header, Footer, BusinessUnitCard],
   templateUrl: './business-unit.component.html'
 })
 export class BusinessUnitComponent {
@@ -27,6 +27,8 @@ export class BusinessUnitComponent {
   onCardClick(unit: BusinessUnit) {
     if (unit.isAddNew) {
       this.router.navigate(['/add-business-unit']);
+    } else {
+      this.router.navigate(['/raffle-dashboard']);
     }
   }
   businessUnits: BusinessUnit[] = [
