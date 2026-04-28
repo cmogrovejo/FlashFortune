@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SocialProviderButton } from '../../shared/components/social-provider-button/social-provider-button';
 import { VaultInputWrapper } from '../../shared/components/vault-input-wrapper/vault-input-wrapper';
@@ -7,7 +7,7 @@ import { VaultInputWrapper } from '../../shared/components/vault-input-wrapper/v
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, SocialProviderButton, VaultInputWrapper],
+  imports: [ReactiveFormsModule, SocialProviderButton, VaultInputWrapper, RouterLink],
   templateUrl: './login.component.html'
 })
 export class LoginComponent {

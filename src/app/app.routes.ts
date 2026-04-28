@@ -6,4 +6,5 @@ export const routes: Routes = [
   { path: 'business-unit', loadComponent: () => import('./pages/business-unit/business-unit.component').then(m => m.BusinessUnitComponent) },
   { path: 'add-business-unit', loadComponent: () => import('./pages/add-business-unit/add-business-unit.component').then(m => m.AddBusinessUnitComponent) },
   { path: 'raffle-dashboard', loadComponent: () => import('./pages/raffle-dashboard/raffle-dashboard.component').then(m => m.RaffleDashboardComponent) },
+  { path: 'password-recovery', loadComponent: () => import('./pages/password-recovery/password-recovery').then(m => m.PasswordRecovery) },
 ];
