@@ -1,0 +1,217 @@
+<div class="min-h-screen bg-background flex">
+  <!-- Sidebar -->
+  <app-dashboard-sidebar></app-dashboard-sidebar>
+
+  <!-- Main Content Area -->
+  <div class="flex-1 ml-64 flex flex-col">
+    <app-dashboard-top-nav></app-dashboard-top-nav>
+
+    <!-- Page Content -->
+    <main class="flex-1 p-8 lg:p-12 overflow-x-hidden">
+      <!-- Breadcrumbs -->
+      <div class="flex items-center gap-2 text-sm mb-6">
+        <span class="icon-[lucide--landmark] w-4 h-4 text-on-surface-variant"></span>
+        <span class="text-on-surface-variant">MoonshotBank</span>
+        <span class="icon-[lucide--chevron-right] w-4 h-4 text-on-surface-variant"></span>
+        <span class="text-on-surface-variant">Raffles</span>
+        <span class="icon-[lucide--chevron-right] w-4 h-4 text-on-surface-variant"></span>
+        <span class="text-primary font-bold">New Setup</span>
+      </div>
+
+      <!-- Header Row -->
+      <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-10">
+        <div>
+          <h2 class="text-4xl font-bold tracking-tight text-on-surface mb-2">Initialize New Raffle</h2>
+          <p class="text-on-surface-variant max-w-2xl">
+            Configure the parameters for the next high-stakes draw. Ensure all logical rules are verified before
+            proceeding to prize allocation.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-4 mt-2 lg:mt-0">
+          <!-- Draft Mode Badge -->
+          <div class="bg-surface-higher border border-orange-500/30 px-4 py-2 rounded-xl flex items-center gap-2">
+            <span class="icon-[lucide--settings] w-4 h-4 text-orange-400"></span>
+            <span class="text-orange-400 text-sm font-bold tracking-widest uppercase">Draft Mode</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Grid -->
+      <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mb-10">
+        <!-- Left Column (Wider) -->
+        <div class="xl:col-span-2 flex flex-col gap-6">
+
+          <!-- Core Identifiers Card -->
+          <div class="bg-surface border border-white/5 rounded-2xl p-6 lg:p-8">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="icon-[lucide--info] w-6 h-6 text-primary"></span>
+              <h3 class="text-2xl font-bold text-on-surface">Core Identifiers</h3>
+            </div>
+
+            <div class="flex flex-col gap-6">
+              <div class="flex flex-col gap-2">
+                <label
+                  class="text-xs font-bold tracking-widest uppercase text-on-surface-variant flex items-center gap-1">
+                  Raffle Designation <span class="text-orange-500">*</span>
+                </label>
+                <div class="relative group">
+                  <input type="text" placeholder="e.g. Q3 Platinum Vault Draw"
+                    class="w-full bg-surface-higher border border-white/10 rounded-xl px-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all placeholder:text-on-surface-variant/50">
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-2">
+                <label class="text-xs font-bold tracking-widest uppercase text-on-surface-variant">
+                  Operational Description
+                </label>
+                <div class="relative group">
+                  <textarea rows="4" placeholder="Detail the purpose and scope of this raffle..."
+                    class="w-full bg-surface-higher border border-white/10 rounded-xl px-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all placeholder:text-on-surface-variant/50 resize-y min-h-[120px]"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Temporal Parameters Card -->
+          <div class="bg-surface border border-white/5 rounded-2xl p-6 lg:p-8">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="icon-[lucide--clock] w-6 h-6 text-primary"></span>
+              <h3 class="text-2xl font-bold text-on-surface">Temporal Parameters</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="flex flex-col gap-2">
+                <label class="text-xs font-bold tracking-widest uppercase text-on-surface-variant">
+                  Commencement Date
+                </label>
+                <div class="relative group">
+                  <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <span
+                      class="icon-[lucide--calendar] w-5 h-5 text-on-surface-variant group-focus-within:text-primary transition-colors"></span>
+                  </div>
+                  <input type="date"
+                    class="w-full bg-surface-higher border border-white/10 rounded-xl pl-11 pr-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all color-scheme-dark [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:inset-0 [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:cursor-pointer">
+                  <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                    <span class="icon-[lucide--calendar-days] w-5 h-5 text-on-surface-variant"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-2">
+                <label class="text-xs font-bold tracking-widest uppercase text-on-surface-variant">
+                  Conclusion Date
+                </label>
+                <div class="relative group">
+                  <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <span
+                      class="icon-[lucide--calendar-x] w-5 h-5 text-on-surface-variant group-focus-within:text-primary transition-colors"></span>
+                  </div>
+                  <input type="date"
+                    class="w-full bg-surface-higher border border-white/10 rounded-xl pl-11 pr-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all color-scheme-dark [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:inset-0 [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:cursor-pointer">
+                  <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                    <span class="icon-[lucide--calendar-days] w-5 h-5 text-on-surface-variant"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column (Narrower) -->
+        <div class="flex flex-col gap-6">
+
+          <!-- Business Logic Card -->
+          <div class="bg-surface border border-white/5 rounded-2xl p-6 lg:p-8 flex-1">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="icon-[lucide--zap] w-6 h-6 text-orange-400"></span>
+              <h3 class="text-2xl font-bold text-on-surface">Business Logic</h3>
+            </div>
+
+            <div class="flex flex-col gap-8">
+
+              <div class="flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                  <label class="text-xs font-bold tracking-widest uppercase text-on-surface-variant">
+                    Exclusion Factor
+                  </label>
+                  <button class="text-on-surface-variant hover:text-on-surface transition-colors">
+                    <span class="icon-[lucide--info] w-4 h-4"></span>
+                  </button>
+                </div>
+
+                <div class="relative group">
+                  <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <span class="text-on-surface-variant font-medium">Multiplier:</span>
+                  </div>
+                  <input type="number" value="1.0" step="0.1" min="0"
+                    class="w-full bg-surface-higher border border-white/10 rounded-xl pl-24 pr-4 py-3 text-on-surface font-mono font-bold focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all">
+                </div>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Determines the algorithm weight for filtering high-risk participant profiles prior to the draw.
+                </p>
+              </div>
+
+              <div class="h-px w-full bg-white/5"></div>
+
+              <div class="flex flex-col gap-4">
+                <label class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1">
+                  Participation Criteria
+                </label>
+
+                <!-- Checkbox Option 1 -->
+                <label
+                  class="flex items-start gap-4 p-4 rounded-xl border border-white/5 bg-surface-higher hover:bg-surface-highest transition-colors cursor-pointer group">
+                  <div class="relative flex items-center justify-center mt-0.5">
+                    <input type="checkbox"
+                      class="peer appearance-none w-5 h-5 border-2 border-on-surface-variant/50 rounded shrink-0 checked:border-primary checked:bg-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all cursor-pointer">
+                    <span
+                      class="icon-[lucide--check] w-3.5 h-3.5 text-background absolute opacity-0 peer-checked:opacity-100 pointer-events-none"></span>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <span class="text-on-surface font-bold group-hover:text-primary transition-colors">Tier 1 KYC
+                      Required</span>
+                    <span class="text-xs text-on-surface-variant">Mandate full identity verification.</span>
+                  </div>
+                </label>
+
+                <!-- Checkbox Option 2 -->
+                <label
+                  class="flex items-start gap-4 p-4 rounded-xl border border-white/5 bg-surface-higher hover:bg-surface-highest transition-colors cursor-pointer group">
+                  <div class="relative flex items-center justify-center mt-0.5">
+                    <input type="checkbox"
+                      class="peer appearance-none w-5 h-5 border-2 border-on-surface-variant/50 rounded shrink-0 checked:border-primary checked:bg-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all cursor-pointer">
+                    <span
+                      class="icon-[lucide--check] w-3.5 h-3.5 text-background absolute opacity-0 peer-checked:opacity-100 pointer-events-none"></span>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <span class="text-on-surface font-bold group-hover:text-primary transition-colors">Minimum Balance
+                      Lock</span>
+                    <span class="text-xs text-on-surface-variant">Require vault holding for entry.</span>
+                  </div>
+                </label>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Action Footer -->
+      <div class="flex items-center justify-end gap-4 mt-8">
+        <button
+          class="px-6 py-3 rounded-xl text-on-surface-variant font-bold hover:text-on-surface hover:bg-surface-higher transition-colors border border-transparent">
+          Cancel
+        </button>
+        <button
+          class="bg-primary hover:bg-primary-hover text-surface-highest font-bold py-3 px-6 rounded-xl flex items-center gap-2 transition-all shadow-lg shadow-primary/20 active:scale-[0.98]">
+          Initialize Parameters
+          <span class="icon-[lucide--arrow-right] w-5 h-5"></span>
+        </button>
+      </div>
+
+    </main>
+  </div>
+</div>

@@ -1,0 +1,127 @@
+<!-- Backdrop -->
+<div
+  class="fixed inset-0 z-[100] flex items-center justify-center bg-background/80 backdrop-blur-md"
+  (click)="close()">
+
+  <!-- Modal Card — stop propagation so clicks inside don't close -->
+  <div
+    class="w-full max-w-lg bg-surface-container p-1 rounded-3xl shadow-2xl relative"
+    (click)="$event.stopPropagation()">
+
+    <!-- Decorative gradient border -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10 rounded-3xl pointer-events-none"></div>
+
+    <!-- Inner card -->
+    <div class="relative bg-surface-container-high rounded-[calc(1.5rem-2px)] p-8">
+
+      <!-- Header -->
+      <div class="flex justify-between items-start mb-8">
+        <div>
+          <h2 class="text-2xl font-black text-on-surface tracking-tight">Invite Member</h2>
+          <p class="text-on-surface-variant text-sm mt-1">Add a new professional to the vault staff.</p>
+        </div>
+        <button
+          type="button"
+          (click)="close()"
+          class="p-2 hover:bg-surface-container-highest rounded-full transition-colors text-on-surface-variant hover:text-on-surface">
+          <span class="icon-[lucide--x] w-5 h-5"></span>
+        </button>
+      </div>
+
+      <!-- Form -->
+      <form [formGroup]="form" (ngSubmit)="submit()" class="space-y-6">
+
+        <!-- Full Name -->
+        <div class="space-y-2">
+          <label class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant ml-1">Full Name</label>
+          <input
+            formControlName="fullName"
+            type="text"
+            placeholder="e.g. Elena Vance"
+            class="w-full bg-surface-container-lowest border-none rounded-xl text-on-surface placeholder:text-on-surface-variant/40 p-4 focus:outline-none focus:ring-2 transition-all"
+            [class.focus:ring-primary/50]="!fullName.invalid || !fullName.touched"
+            [class.ring-2]="fullName.invalid && fullName.touched"
+            [class.ring-error/50]="fullName.invalid && fullName.touched"/>
+          @if (fullName.invalid && fullName.touched) {
+            <p class="text-xs text-error ml-1">Full name is required.</p>
+          }
+        </div>
+
+        <!-- Corporate Email -->
+        <div class="space-y-2">
+          <label class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant ml-1">Corporate Email</label>
+          <input
+            formControlName="email"
+            type="email"
+            placeholder="e.g. e.vance@moonshotbank.com"
+            class="w-full bg-surface-container-lowest border-none rounded-xl text-on-surface placeholder:text-on-surface-variant/40 p-4 focus:outline-none focus:ring-2 transition-all"
+            [class.focus:ring-primary/50]="!email.invalid || !email.touched"
+            [class.ring-2]="email.invalid && email.touched"
+            [class.ring-error/50]="email.invalid && email.touched"/>
+          @if (email.touched && email.hasError('required')) {
+            <p class="text-xs text-error ml-1">Email is required.</p>
+          } @else if (email.touched && email.hasError('email')) {
+            <p class="text-xs text-error ml-1">Enter a valid email address.</p>
+          }
+        </div>
+
+        <!-- Operational Roles -->
+        <div class="space-y-3">
+          <label class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant ml-1">Operational Roles</label>
+
+          <!-- Configurador -->
+          <label class="flex items-center justify-between p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-highest transition-colors cursor-pointer">
+            <div class="flex items-center gap-3">
+              <span class="icon-[lucide--settings-2] w-5 h-5 text-primary"></span>
+              <span class="font-medium text-on-surface">Configurador</span>
+            </div>
+            <input
+              formControlName="isConfigurador"
+              type="checkbox"
+              class="w-5 h-5 rounded accent-primary cursor-pointer"/>
+          </label>
+
+          <!-- Operador -->
+          <label class="flex items-center justify-between p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-highest transition-colors cursor-pointer">
+            <div class="flex items-center gap-3">
+              <span class="icon-[lucide--zap] w-5 h-5 text-secondary"></span>
+              <span class="font-medium text-on-surface">Operador</span>
+            </div>
+            <input
+              formControlName="isOperador"
+              type="checkbox"
+              class="w-5 h-5 rounded accent-primary cursor-pointer"/>
+          </label>
+
+          <!-- Auditor -->
+          <label class="flex items-center justify-between p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-highest transition-colors cursor-pointer">
+            <div class="flex items-center gap-3">
+              <span class="icon-[lucide--bar-chart-2] w-5 h-5 text-tertiary"></span>
+              <span class="font-medium text-on-surface">Auditor</span>
+            </div>
+            <input
+              formControlName="isAuditor"
+              type="checkbox"
+              class="w-5 h-5 rounded accent-primary cursor-pointer"/>
+          </label>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-4 pt-4">
+          <button
+            type="button"
+            (click)="close()"
+            class="flex-1 py-4 text-on-surface-variant font-bold hover:text-on-surface transition-colors">
+            Cancel
+          </button>
+          <button
+            type="submit"
+            class="flex-[2] py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+            Send Invitation
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
