@@ -1,0 +1,249 @@
+<div class="min-h-screen bg-background flex">
+
+  <!-- ─────────────────── SIDEBAR ─────────────────── -->
+  <aside class="w-60 h-screen bg-background border-r border-white/5 flex flex-col fixed left-0 top-0">
+
+    <div class="px-6 pt-8 pb-6 border-b border-white/5">
+      <p class="text-primary font-black text-sm tracking-widest uppercase">The Kinetic Vault</p>
+      <p class="text-on-surface-variant text-[9px] tracking-[0.2em] uppercase mt-1">Secure Raffle Management</p>
+    </div>
+
+    <nav class="flex-1 flex flex-col gap-0.5 px-3 py-4">
+      <a href="#" class="flex items-center gap-3 px-5 py-3.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-low transition-colors group">
+        <span class="icon-[lucide--layout-grid] w-4 h-4 group-hover:text-primary transition-colors"></span>
+        <span class="text-[10px] font-bold tracking-widest uppercase">Dashboard</span>
+      </a>
+      <a href="#" class="flex items-center gap-3 px-5 py-3.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-low transition-colors group">
+        <span class="icon-[lucide--gift] w-4 h-4 group-hover:text-primary transition-colors"></span>
+        <span class="text-[10px] font-bold tracking-widest uppercase">Prize Setup</span>
+      </a>
+      <a href="#" class="flex items-center gap-3 px-5 py-3.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-low transition-colors group">
+        <span class="icon-[lucide--database] w-4 h-4 group-hover:text-primary transition-colors"></span>
+        <span class="text-[10px] font-bold tracking-widest uppercase">Data Loader</span>
+      </a>
+      <!-- Active -->
+      <a href="#" class="flex items-center gap-3 px-5 py-3.5 rounded-lg bg-primary/10 text-primary relative">
+        <div class="absolute left-0 top-1 bottom-1 w-0.5 bg-primary rounded-r"></div>
+        <span class="icon-[lucide--target] w-4 h-4"></span>
+        <span class="text-[10px] font-bold tracking-widest uppercase">Raffle Arena</span>
+      </a>
+    </nav>
+
+    <div class="px-4 pb-4">
+      <button class="w-full bg-primary text-on-primary font-black py-3 px-4 rounded-full
+                     flex items-center justify-center gap-2 text-[10px] tracking-widest uppercase
+                     hover:brightness-110 active:scale-[0.98] transition-all shadow-lg shadow-primary/20">
+        <span class="icon-[lucide--plus] w-3.5 h-3.5"></span>
+        New Raffle
+      </button>
+    </div>
+
+    <div class="flex flex-col gap-1 px-7 pb-8 border-t border-white/5 pt-4">
+      <button class="flex items-center gap-3 py-2.5 text-on-surface-variant hover:text-on-surface transition-colors text-left group">
+        <span class="icon-[lucide--circle-help] w-4 h-4 group-hover:text-primary transition-colors"></span>
+        <span class="text-[10px] font-bold tracking-widest uppercase">Help Center</span>
+      </button>
+      <button class="flex items-center gap-3 py-2.5 text-on-surface-variant hover:text-on-surface transition-colors text-left group">
+        <span class="icon-[lucide--log-out] w-4 h-4 group-hover:text-primary transition-colors"></span>
+        <span class="text-[10px] font-bold tracking-widest uppercase">Logout</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ─────────────────── CONTENT AREA ─────────────────── -->
+  <div class="flex-1 ml-60 flex flex-col min-h-screen">
+
+    <!-- TOP NAV -->
+    <header class="flex items-center justify-between px-8 py-4 border-b border-white/5 bg-background shrink-0">
+      <nav class="flex items-center">
+        <a href="#" class="px-4 py-2 text-sm text-on-surface-variant hover:text-on-surface transition-colors">Dashboard</a>
+        <a href="#" class="px-4 py-2 text-sm text-on-surface-variant hover:text-on-surface transition-colors">Prize Setup</a>
+        <a href="#" class="px-4 py-2 text-sm text-on-surface-variant hover:text-on-surface transition-colors">Data Loader</a>
+        <a href="#" class="px-4 py-2 text-sm font-semibold text-primary border-b-2 border-primary pb-[6px]">Raffle Arena</a>
+      </nav>
+      <div class="flex items-center gap-5">
+        <button class="text-on-surface-variant hover:text-on-surface transition-colors relative">
+          <span class="icon-[lucide--bell] w-5 h-5"></span>
+          <span class="absolute top-0 right-0 w-1.5 h-1.5 bg-primary rounded-full border border-background"></span>
+        </button>
+        <button class="text-on-surface-variant hover:text-on-surface transition-colors">
+          <span class="icon-[lucide--settings] w-5 h-5"></span>
+        </button>
+        <div class="w-9 h-9 rounded-full bg-surface-high border border-white/10 overflow-hidden flex items-center justify-center">
+          <div class="w-full h-full bg-linear-to-tr from-primary/20 to-blue-500/20 flex items-center justify-center">
+            <span class="icon-[lucide--user] w-4 h-4 text-on-surface"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- SPLIT BODY -->
+    <div class="flex flex-1 min-h-0">
+
+      <!-- ─── LEFT: PRIZE QUEUE ─── -->
+      <aside class="w-72 border-r border-white/5 flex flex-col px-5 py-6 gap-3 overflow-y-auto shrink-0">
+
+        <p class="text-[10px] font-black tracking-widest uppercase text-on-surface-variant mb-1">Prize Queue</p>
+
+        <!-- Drawn -->
+        <div class="bg-surface-low/50 border border-white/5 rounded-2xl p-4 opacity-60">
+          <div class="flex items-start justify-between mb-3">
+            <span class="text-[9px] font-black tracking-widest uppercase px-2.5 py-1 rounded-full bg-surface-highest text-on-surface-variant">DRAWN</span>
+            <span class="icon-[lucide--check-circle-2] w-4 h-4 text-on-surface-variant"></span>
+          </div>
+          <p class="font-bold text-sm text-on-surface">Tesla Model S Plaid</p>
+          <p class="text-xs text-on-surface-variant mt-1.5">Winner: @cryptoking_22</p>
+        </div>
+
+        <!-- Current Prize -->
+        <div class="bg-secondary/5 border-2 border-secondary/50 rounded-2xl p-4 shadow-lg shadow-secondary/10">
+          <div class="flex items-start justify-between mb-3">
+            <span class="text-[9px] font-black tracking-widest uppercase px-2.5 py-1 rounded-full bg-secondary text-background">CURRENT PRIZE</span>
+            <div class="w-7 h-7 rounded-full bg-secondary/20 border border-secondary/40 flex items-center justify-center shrink-0">
+              <span class="icon-[lucide--star] w-3.5 h-3.5 text-secondary"></span>
+            </div>
+          </div>
+          <p class="font-black text-lg text-on-surface leading-tight mt-1">Luxury Penthouse Apartment</p>
+          <p class="text-secondary text-sm font-semibold mt-1 mb-4">Dubai Marina, Block 7</p>
+          <div class="flex items-center justify-between text-xs text-on-surface-variant border-t border-white/5 pt-3">
+            <span>Value: <span class="font-bold text-on-surface">$2.4M</span></span>
+            <span>Coupons: <span class="font-bold text-on-surface">14,502</span></span>
+          </div>
+        </div>
+
+        <!-- Up Next -->
+        <div class="bg-surface-low border border-white/5 rounded-2xl p-4">
+          <div class="flex items-start justify-between mb-3">
+            <span class="text-[9px] font-black tracking-widest uppercase px-2.5 py-1 rounded-full bg-surface-highest text-on-surface-variant">UP NEXT</span>
+            <span class="icon-[lucide--clock-3] w-4 h-4 text-on-surface-variant"></span>
+          </div>
+          <p class="font-bold text-sm text-on-surface">Rolex Daytona Gold</p>
+          <p class="text-xs text-on-surface-variant mt-1.5">Scheduled: 14:00 GMT</p>
+        </div>
+
+        <!-- Hidden prizes -->
+        <div class="border border-dashed border-white/10 rounded-2xl p-4 flex items-center gap-3">
+          <span class="icon-[lucide--lock] w-4 h-4 text-on-surface-variant"></span>
+          <span class="text-[10px] font-black tracking-widest uppercase text-on-surface-variant">
+            {{ hiddenCount }} Hidden Prizes
+          </span>
+        </div>
+
+      </aside>
+
+      <!-- ─── RIGHT: DRAW ARENA ─── -->
+      <div class="flex-1 flex flex-col relative">
+
+        <!-- Exclusion Toast -->
+        @if (showExclusionToast()) {
+          <div class="absolute top-6 right-6 z-10 animate-vault-entry">
+            <div class="bg-surface-high border border-secondary/40 rounded-2xl p-4 flex items-start gap-3 shadow-xl shadow-secondary/10 max-w-xs">
+              <div class="w-8 h-8 rounded-full bg-secondary/20 border border-secondary/30 flex items-center justify-center shrink-0 mt-0.5">
+                <span class="icon-[lucide--triangle-alert] w-4 h-4 text-secondary"></span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="text-sm font-bold text-on-surface">ID 772x already won</p>
+                <p class="text-xs text-on-surface-variant mt-0.5">Skipping... (Re-roll triggered)</p>
+              </div>
+              <button (click)="dismissToast()" class="text-on-surface-variant hover:text-on-surface transition-colors shrink-0 mt-0.5">
+                <span class="icon-[lucide--x] w-4 h-4"></span>
+              </button>
+            </div>
+          </div>
+        }
+
+        <!-- Main draw area -->
+        <div class="flex-1 flex flex-col items-center justify-center gap-10 px-12 pb-6">
+
+          <!-- Phase label -->
+          <p class="text-[10px] font-black tracking-[0.4em] uppercase"
+            [class.text-primary]="!isComplete()"
+            [class.text-secondary]="isComplete()">
+            @if (phase() === 'idle') { Ready to Draw }
+            @if (isDrawing()) { Drawing Winning Coupon }
+            @if (isComplete()) { Winner Confirmed }
+          </p>
+
+          <!-- Slot Machine -->
+          <div class="flex items-center justify-center gap-3">
+            @for (slot of slots(); track slot.id) {
+              @if (slot.isSeparator) {
+                <span class="text-5xl font-black text-on-surface-variant select-none px-1">—</span>
+              } @else {
+                <div class="w-20 h-24 rounded-2xl flex items-center justify-center border transition-all duration-300"
+                  [class.bg-surface-high]="slot.settled"
+                  [class.border-white/10]="slot.settled"
+                  [class.bg-surface-high/70]="!slot.settled"
+                  [class.border-tertiary/30]="!slot.settled"
+                  [class.shadow-lg]="!slot.settled"
+                  [class.shadow-tertiary/20]="!slot.settled">
+                  <span class="text-6xl font-black tabular-nums select-none transition-colors duration-200"
+                    [class.text-on-surface]="slot.settled"
+                    [class.text-tertiary]="!slot.settled"
+                    [class.animate-slot-spin]="!slot.settled && isDrawing()">
+                    {{ slot.displayValue }}
+                  </span>
+                </div>
+              }
+            }
+          </div>
+
+          <!-- Status line -->
+          <div class="flex items-center gap-2.5">
+            <span class="w-2 h-2 rounded-full transition-colors duration-300"
+              [class.bg-primary]="isDrawing()"
+              [class.animate-pulse]="isDrawing()"
+              [class.bg-secondary]="isComplete()"
+              [class.bg-on-surface-variant]="phase() === 'idle'"></span>
+            <span class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant">
+              @if (phase() === 'idle') { Awaiting draw start }
+              @if (isDrawing()) { Verifying on-chain kinetic randomness... }
+              @if (isComplete()) { Winner confirmed — coupon verified }
+            </span>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="flex items-center gap-4">
+            <button (click)="startDraw()"
+              [disabled]="isDrawing()"
+              class="flex items-center gap-3 bg-primary text-on-primary font-black px-12 py-5 rounded-2xl
+                     text-sm tracking-widest uppercase shadow-xl shadow-primary/25
+                     hover:brightness-110 active:scale-[0.98] transition-all
+                     disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100">
+              <span class="icon-[lucide--play] w-5 h-5"></span>
+              Start Raffle
+            </button>
+
+            <button (click)="panicStop()"
+              class="flex items-center gap-3 bg-surface-high border border-error/40 text-error font-black px-10 py-5 rounded-2xl
+                     text-sm tracking-widest uppercase hover:bg-error/10 active:scale-[0.98] transition-all">
+              <span class="icon-[lucide--diamond] w-4 h-4"></span>
+              Panic Button
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Stats bar -->
+        <div class="border-t border-white/5 px-12 py-6 flex items-center justify-around shrink-0">
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="text-[9px] font-black tracking-widest uppercase text-on-surface-variant">Participants</span>
+            <span class="text-3xl font-black text-on-surface tabular-nums">84,209</span>
+          </div>
+          <div class="w-px h-12 bg-white/5"></div>
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="text-[9px] font-black tracking-widest uppercase text-on-surface-variant">Prize Pool</span>
+            <span class="text-3xl font-black text-secondary tabular-nums">$14.2M</span>
+          </div>
+          <div class="w-px h-12 bg-white/5"></div>
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="text-[9px] font-black tracking-widest uppercase text-on-surface-variant">Draw Confidence</span>
+            <span class="text-3xl font-black text-on-surface tabular-nums">99.9%</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
