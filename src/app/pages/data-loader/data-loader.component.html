@@ -1,0 +1,340 @@
+<div class="min-h-screen bg-background flex flex-col">
+
+  <!-- ───────────── TOP NAV ───────────── -->
+  <header class="w-full flex items-center justify-between px-8 py-4 border-b border-white/5 bg-background shrink-0">
+    <span class="text-primary font-black text-sm tracking-widest uppercase">The Kinetic Vault</span>
+
+    <nav class="flex items-center gap-8 text-sm">
+      <a href="#" class="text-on-surface-variant hover:text-on-surface transition-colors">Dashboard</a>
+      <a href="#" class="text-primary font-semibold border-b-2 border-primary pb-0.5">Raffles</a>
+      <a href="#" class="text-on-surface-variant hover:text-on-surface transition-colors">Audit Log</a>
+      <a href="#" class="text-on-surface-variant hover:text-on-surface transition-colors">Settings</a>
+    </nav>
+
+    <div class="flex items-center gap-5">
+      <button class="text-on-surface-variant hover:text-on-surface transition-colors relative">
+        <span class="icon-[lucide--bell] w-5 h-5"></span>
+        <span class="absolute top-0 right-0 w-1.5 h-1.5 bg-primary rounded-full border border-background"></span>
+      </button>
+      <button class="text-on-surface-variant hover:text-on-surface transition-colors">
+        <span class="icon-[lucide--circle-help] w-5 h-5"></span>
+      </button>
+      <button class="w-8 h-8 rounded-full bg-surface-highest border border-white/10 flex items-center justify-center overflow-hidden">
+        <div class="w-full h-full bg-linear-to-tr from-primary/20 to-blue-500/20 flex items-center justify-center">
+          <span class="icon-[lucide--user] w-4 h-4 text-on-surface"></span>
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <!-- ───────────── BODY (sidebar + content) ───────────── -->
+  <div class="flex flex-1 min-h-0">
+
+    <!-- ───────────── LEFT SIDEBAR ───────────── -->
+    <aside class="w-52 bg-background border-r border-white/5 flex flex-col shrink-0">
+
+      <!-- Vault Control card -->
+      <div class="m-4">
+        <div class="bg-surface-low rounded-xl p-4 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-lg bg-primary/20 flex items-center justify-center shrink-0">
+            <span class="icon-[lucide--shield-check] w-5 h-5 text-primary"></span>
+          </div>
+          <div>
+            <p class="text-on-surface font-bold text-[11px] tracking-widest uppercase leading-tight">Vault Control</p>
+            <p class="text-on-surface-variant text-[9px] tracking-widest uppercase mt-0.5 leading-tight">Secure Session<br>Active</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="flex-1 flex flex-col gap-0.5 px-3">
+        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-low transition-colors group">
+          <span class="icon-[lucide--layout-grid] w-4 h-4 group-hover:text-primary transition-colors"></span>
+          <span class="text-[11px] font-bold tracking-widest uppercase">Overview</span>
+        </a>
+
+        <!-- Active: Data Vault -->
+        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary relative">
+          <div class="absolute left-0 top-1 bottom-1 w-0.5 bg-primary rounded-r"></div>
+          <span class="icon-[lucide--database] w-4 h-4"></span>
+          <span class="text-[11px] font-bold tracking-widest uppercase">Data Vault</span>
+        </a>
+
+        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-low transition-colors group">
+          <span class="icon-[lucide--play-circle] w-4 h-4 group-hover:text-primary transition-colors"></span>
+          <span class="text-[11px] font-bold tracking-widest uppercase">Live Draws</span>
+        </a>
+
+        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-low transition-colors group">
+          <span class="icon-[lucide--trophy] w-4 h-4 group-hover:text-primary transition-colors"></span>
+          <span class="text-[11px] font-bold tracking-widest uppercase">Winners</span>
+        </a>
+
+        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-low transition-colors group">
+          <span class="icon-[lucide--shield] w-4 h-4 group-hover:text-primary transition-colors"></span>
+          <span class="text-[11px] font-bold tracking-widest uppercase">Security</span>
+        </a>
+      </nav>
+
+      <!-- Bottom section -->
+      <div class="p-4 border-t border-white/5 flex flex-col gap-3">
+        <button class="w-full bg-primary text-on-primary font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-[10px] tracking-widest uppercase hover:brightness-110 active:scale-[0.98] transition-all shadow-lg shadow-primary/20">
+          <span class="icon-[lucide--lock] w-3.5 h-3.5"></span>
+          Emergency Lock
+        </button>
+        <button class="flex items-center gap-3 py-2 text-on-surface-variant hover:text-on-surface transition-colors text-left w-full group">
+          <span class="icon-[lucide--circle-help] w-4 h-4 group-hover:text-primary transition-colors"></span>
+          <span class="text-[10px] font-bold tracking-widest uppercase">Support</span>
+        </button>
+        <button class="flex items-center gap-3 py-2 text-on-surface-variant hover:text-on-surface transition-colors text-left w-full group">
+          <span class="icon-[lucide--log-out] w-4 h-4 group-hover:text-primary transition-colors"></span>
+          <span class="text-[10px] font-bold tracking-widest uppercase">Sign Out</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ───────────── MAIN CONTENT ───────────── -->
+    <main class="flex-1 overflow-y-auto">
+      <div class="p-8 lg:p-10 max-w-6xl">
+
+        <!-- Page Header -->
+        <div class="flex items-start justify-between mb-8 gap-6 flex-wrap">
+          <div>
+            <p class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2">Ingesta de Datos</p>
+            <h1 class="text-4xl font-black tracking-tight text-on-surface">Validación de Integridad</h1>
+          </div>
+          <!-- Status Pills -->
+          <div class="flex items-center rounded-xl overflow-hidden border border-white/10 shrink-0">
+            <div class="flex items-center gap-2 bg-primary/20 px-5 py-3">
+              <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              <span class="text-primary font-bold text-xs tracking-widest uppercase">Sistema Activo</span>
+            </div>
+            <div class="px-5 py-3 bg-surface-low">
+              <span class="text-on-surface-variant text-xs tracking-widest uppercase font-medium">Modo: Protocolo Seguro</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── Two-column layout ─── -->
+        <div class="flex gap-6 items-start">
+
+          <!-- LEFT COLUMN -->
+          <div class="flex-1 min-w-0 flex flex-col gap-5">
+
+            <!-- Stepper -->
+            <div class="flex items-center gap-3">
+              <!-- Step 1 -->
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-black shrink-0"
+                  [class.bg-primary]="currentStep() >= 1"
+                  [class.text-on-primary]="currentStep() >= 1"
+                  [class.bg-surface-high]="currentStep() < 1"
+                  [class.text-on-surface-variant]="currentStep() < 1">
+                  1
+                </div>
+                <span class="text-[10px] font-bold tracking-widest uppercase"
+                  [class.text-primary]="currentStep() >= 1"
+                  [class.text-on-surface-variant]="currentStep() < 1">
+                  Upload
+                </span>
+              </div>
+              <div class="flex-1 h-px bg-surface-high mx-1"></div>
+
+              <!-- Step 2 -->
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-black shrink-0"
+                  [class.bg-primary]="currentStep() >= 2"
+                  [class.text-on-primary]="currentStep() >= 2"
+                  [class.bg-surface-high]="currentStep() < 2"
+                  [class.text-on-surface-variant]="currentStep() < 2">
+                  2
+                </div>
+                <span class="text-[10px] font-bold tracking-widest uppercase"
+                  [class.text-primary]="currentStep() >= 2"
+                  [class.text-on-surface-variant]="currentStep() < 2">
+                  Validate
+                </span>
+              </div>
+              <div class="flex-1 h-px bg-surface-high mx-1"></div>
+
+              <!-- Step 3 -->
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-black shrink-0"
+                  [class.bg-primary]="currentStep() >= 3"
+                  [class.text-on-primary]="currentStep() >= 3"
+                  [class.bg-surface-high]="currentStep() < 3"
+                  [class.text-on-surface-variant]="currentStep() < 3">
+                  3
+                </div>
+                <span class="text-[10px] font-bold tracking-widest uppercase"
+                  [class.text-primary]="currentStep() >= 3"
+                  [class.text-on-surface-variant]="currentStep() < 3">
+                  Generate
+                </span>
+              </div>
+            </div>
+
+            <!-- Dropzone -->
+            <div class="rounded-xl border-2 border-dashed transition-all duration-200 p-12 flex flex-col items-center justify-center text-center"
+              [class.border-primary/40]="!isDragOver()"
+              [class.bg-surface-low]="!isDragOver()"
+              [class.border-primary]="isDragOver()"
+              [class.bg-primary/5]="isDragOver()"
+              (dragover)="onDragOver($event)"
+              (dragleave)="onDragLeave()"
+              (drop)="onDrop($event)">
+
+              <span class="icon-[lucide--upload-cloud] w-12 h-12 text-on-surface-variant mb-5"></span>
+
+              @if (selectedFile()) {
+                <p class="text-base font-bold text-on-surface mb-2">{{ selectedFile()!.name }}</p>
+                <p class="text-sm text-on-surface-variant mb-5">Archivo cargado — suelte uno nuevo para reemplazar</p>
+              } @else {
+                <p class="text-base font-bold text-on-surface mb-2">Arrastre los archivos aquí</p>
+                <p class="text-sm text-on-surface-variant mb-6">Soporte para formatos .csv, .txt y .dat (Max. 500MB)</p>
+              }
+
+              <button (click)="onBrowse()"
+                class="border border-primary text-primary bg-transparent hover:bg-primary/10 font-bold px-8 py-3 rounded-xl text-xs uppercase tracking-widest transition-colors">
+                Seleccionar Archivo
+              </button>
+              <input #fileInput type="file" accept=".csv,.txt,.dat" class="hidden" (change)="onFileSelected($event)" />
+            </div>
+
+            <!-- Progress Section -->
+            <div class="bg-surface-low rounded-xl p-5">
+              <p class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2">Progreso de Carga</p>
+              <div class="flex items-baseline justify-between mb-3">
+                <p class="text-lg font-bold text-on-surface">
+                  {{ selectedFile() ? selectedFile()!.name : 'clientes_abril.csv' }}
+                  <span class="text-on-surface-variant font-normal ml-2">{{ uploadProgress() }}%</span>
+                </p>
+                <span class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold">Velocidad: 1.2 GB/s</span>
+              </div>
+              <div class="w-full h-1.5 bg-surface-high rounded-full overflow-hidden">
+                <div class="h-full bg-primary rounded-full transition-all duration-500"
+                  [style.width]="uploadProgress() + '%'"></div>
+              </div>
+            </div>
+
+            <!-- Terminal -->
+            <div class="bg-surface-lowest rounded-xl overflow-hidden border border-white/5">
+              <!-- Traffic lights header -->
+              <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-surface-low">
+                <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-secondary/80"></span>
+                <span class="w-3 h-3 rounded-full bg-primary/80"></span>
+              </div>
+              <!-- Log Entries -->
+              <div class="p-5 font-mono text-[11px] flex flex-col gap-1.5 max-h-56 overflow-y-auto">
+                @for (entry of logEntries(); track entry.time + entry.message) {
+                  <div class="leading-relaxed"
+                    [class.text-primary]="entry.tag !== 'WARN'"
+                    [class.text-secondary]="entry.tag === 'WARN'">
+                    [{{ entry.time }}] {{ entry.tag }}: {{ entry.message }}
+                  </div>
+                }
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div class="w-64 shrink-0 flex flex-col gap-4">
+
+            <!-- Checklist de Seguridad -->
+            <div class="bg-surface-low rounded-xl p-5 border border-white/5">
+              <div class="flex items-center gap-2 mb-5">
+                <span class="icon-[lucide--clipboard-check] w-5 h-5 text-primary"></span>
+                <h3 class="text-sm font-bold text-on-surface">Checklist de Seguridad</h3>
+              </div>
+
+              <div class="flex flex-col gap-3 mb-5">
+                <div class="flex justify-between items-center text-sm border-b border-white/5 pb-3">
+                  <span class="text-on-surface-variant">Registros Válidos</span>
+                  <span class="font-bold text-on-surface">999,980</span>
+                </div>
+                <div class="flex justify-between items-center text-sm border-b border-white/5 pb-3">
+                  <span class="text-on-surface-variant">Duplicados</span>
+                  <span class="font-bold text-secondary">20</span>
+                </div>
+                <div class="flex justify-between items-center text-sm">
+                  <span class="text-on-surface-variant">Errores de Formato</span>
+                  <span class="font-bold text-secondary">0</span>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-white/5 mb-4">
+                <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-2">Total Cupones a Generar</p>
+                <p class="text-3xl font-black tracking-tight text-secondary">15,450,200</p>
+              </div>
+
+              <button class="w-full border border-primary/40 hover:border-primary text-primary font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-xs uppercase tracking-widest transition-colors">
+                Validar Integridad
+                <span class="icon-[lucide--arrow-right] w-4 h-4"></span>
+              </button>
+            </div>
+
+            <!-- Nota de Encriptación -->
+            <div class="bg-surface-low rounded-xl p-5 border border-secondary/20">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="icon-[lucide--info] w-4 h-4 text-secondary"></span>
+                <p class="text-[11px] font-bold text-on-surface">Nota de Encriptación</p>
+              </div>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Todos los datos cargados son procesados mediante cifrado AES-256 en reposo. El sistema detecta automáticamente patrones fraudulentos antes de la generación de cupones.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ─── Bottom Stat Cards ─── -->
+        <div class="grid grid-cols-3 gap-4 mt-8">
+          <div class="bg-surface-low rounded-xl p-5 flex items-center gap-4">
+            <div class="w-14 h-14 rounded-xl bg-surface-high flex items-center justify-center shrink-0">
+              <span class="icon-[lucide--server] w-6 h-6 text-on-surface-variant"></span>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Nodo de Proceso</p>
+              <p class="text-lg font-black text-on-surface tracking-tight">KINETIC-V42</p>
+            </div>
+          </div>
+
+          <div class="bg-surface-low rounded-xl p-5 flex items-center gap-4">
+            <div class="w-14 h-14 rounded-xl bg-surface-high flex items-center justify-center shrink-0">
+              <span class="icon-[lucide--hash] w-6 h-6 text-on-surface-variant"></span>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Hash de Sesión</p>
+              <p class="text-lg font-black text-on-surface tracking-tight">F489...2A11</p>
+            </div>
+          </div>
+
+          <div class="bg-surface-low rounded-xl p-5 flex items-center gap-4">
+            <div class="w-14 h-14 rounded-xl bg-surface-high flex items-center justify-center shrink-0">
+              <span class="icon-[lucide--globe] w-6 h-6 text-on-surface-variant"></span>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Uptime del Sistema</p>
+              <p class="text-lg font-black text-on-surface tracking-tight">99.998%</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── Footer ─── -->
+        <footer class="mt-10 pt-6 border-t border-white/5 flex items-center justify-between flex-wrap gap-4">
+          <p class="text-[10px] text-on-surface-variant uppercase tracking-widest">
+            © 2024 The Kinetic Vault. Secure Banking Encryption Active.
+          </p>
+          <div class="flex items-center gap-6">
+            <a href="#" class="text-[10px] text-on-surface-variant hover:text-on-surface uppercase tracking-widest transition-colors">Privacy Protocol</a>
+            <a href="#" class="text-[10px] text-on-surface-variant hover:text-on-surface uppercase tracking-widest transition-colors">Terms of Service</a>
+            <a href="#" class="text-[10px] text-on-surface-variant hover:text-on-surface uppercase tracking-widest transition-colors">API Documentation</a>
+          </div>
+        </footer>
+
+      </div>
+    </main>
+  </div>
+</div>

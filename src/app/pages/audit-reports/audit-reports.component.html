@@ -1,0 +1,227 @@
+<div class="min-h-screen bg-background flex flex-col">
+
+  <!-- ───────────── TOP NAV ───────────── -->
+  <header class="w-full flex items-center justify-between px-10 py-4 border-b border-white/5 bg-background shrink-0">
+    <span class="text-primary font-black text-sm tracking-widest uppercase">The Kinetic Vault</span>
+
+    <nav class="flex items-center gap-8 text-sm">
+      <a href="#" class="text-on-surface-variant hover:text-on-surface transition-colors">Dashboard</a>
+      <a href="#" class="text-on-surface-variant hover:text-on-surface transition-colors">Raffles</a>
+      <a href="#" class="text-primary font-semibold border-b-2 border-primary pb-0.5">Audits</a>
+      <a href="#" class="text-on-surface-variant hover:text-on-surface transition-colors">Winners</a>
+      <a href="#" class="text-on-surface-variant hover:text-on-surface transition-colors">Settings</a>
+    </nav>
+
+    <div class="flex items-center gap-5">
+      <button class="text-on-surface-variant hover:text-on-surface transition-colors relative">
+        <span class="icon-[lucide--bell] w-5 h-5"></span>
+        <span class="absolute top-0 right-0 w-1.5 h-1.5 bg-primary rounded-full border border-background"></span>
+      </button>
+      <button class="text-on-surface-variant hover:text-on-surface transition-colors">
+        <span class="icon-[lucide--square-terminal] w-5 h-5"></span>
+      </button>
+      <button class="w-8 h-8 rounded-full bg-surface-highest border border-white/10 flex items-center justify-center overflow-hidden">
+        <div class="w-full h-full bg-linear-to-tr from-primary/20 to-blue-500/20 flex items-center justify-center">
+          <span class="icon-[lucide--user] w-4 h-4 text-on-surface"></span>
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <!-- ───────────── MAIN ───────────── -->
+  <main class="flex-1 w-full max-w-screen-xl mx-auto px-10 py-10 flex flex-col gap-8">
+
+    <!-- Page Header -->
+    <div>
+      <!-- Status badge + raffle ID -->
+      <div class="flex items-center gap-3 mb-4">
+        <span class="bg-primary/20 border border-primary/40 text-primary text-xs font-bold px-3 py-1 rounded-md flex items-center gap-1.5">
+          FINALIZADO
+          <span class="icon-[lucide--check] w-3.5 h-3.5"></span>
+        </span>
+        <span class="text-on-surface-variant text-sm">RAFFLE ID: #KV-2024-0812-QX</span>
+      </div>
+
+      <!-- Title + actions row -->
+      <div class="flex items-end justify-between gap-6 flex-wrap">
+        <div>
+          <h1 class="text-5xl font-black tracking-tight text-on-surface mb-3">
+            Reporting and Audit Center
+          </h1>
+          <p class="text-on-surface-variant text-sm max-w-lg leading-relaxed">
+            Official immutable record of the Kinetic Vault draw protocol.
+            Secure verification and collision log for compliance v4.2.
+          </p>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <button class="flex items-center gap-2 bg-surface-low border border-white/10 text-on-surface hover:bg-surface-high font-bold px-5 py-3 rounded-xl text-sm transition-colors">
+            <span class="icon-[lucide--download] w-4 h-4"></span>
+            Export PDF
+          </button>
+          <button class="flex items-center gap-2 bg-primary text-on-primary hover:brightness-110 active:scale-[0.98] font-bold px-5 py-3 rounded-xl text-sm transition-all shadow-lg shadow-primary/20">
+            <span class="icon-[lucide--badge-check] w-4 h-4"></span>
+            Verify Node
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── 4 Metric Cards ─── -->
+    <div class="bg-surface-low rounded-2xl border border-white/5 grid grid-cols-4 divide-x divide-white/5">
+
+      <!-- Execution Period -->
+      <div class="p-6">
+        <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-3">Execution Period</p>
+        <p class="font-mono text-xs text-on-surface leading-relaxed">
+          START: 2024-08-12 14:00:00<br>
+          END: &nbsp; 2024-08-12 14:02:14
+        </p>
+      </div>
+
+      <!-- Lead Operator -->
+      <div class="p-6">
+        <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-3">Lead Operator</p>
+        <p class="text-xl font-black text-on-surface tracking-tight mb-1">Marcus Thorne</p>
+        <p class="text-xs text-on-surface-variant">Auth ID: OP-98211-B</p>
+      </div>
+
+      <!-- Total Coupons Pool -->
+      <div class="p-6">
+        <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-3">Total Coupons Pool</p>
+        <p class="text-3xl font-black text-secondary tracking-tight">100,000,000</p>
+      </div>
+
+      <!-- Integrity Hash -->
+      <div class="p-6">
+        <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-3">Integrity Hash (SHA-256)</p>
+        <p class="font-mono text-xs text-primary break-all leading-relaxed">
+          5f372c0d5402f146a8157778b4d99b6660<br>
+          143896504a377d4c7283287669d51f
+        </p>
+      </div>
+    </div>
+
+    <!-- ─── Winners Table ─── -->
+    <div class="bg-surface-low rounded-2xl border border-white/5 p-6">
+
+      <!-- Section header -->
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-base font-bold text-on-surface">Main Draw Results</h2>
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Secure Channel Active</span>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="w-full overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="border-b border-white/5">
+              <th class="text-left text-[10px] uppercase tracking-widest text-on-surface-variant font-bold pb-3 pr-6">Order</th>
+              <th class="text-left text-[10px] uppercase tracking-widest text-on-surface-variant font-bold pb-3 pr-6">Prize Name</th>
+              <th class="text-left text-[10px] uppercase tracking-widest text-on-surface-variant font-bold pb-3 pr-6">Winner &amp; ID</th>
+              <th class="text-left text-[10px] uppercase tracking-widest text-on-surface-variant font-bold pb-3 pr-6">Account Number</th>
+              <th class="text-left text-[10px] uppercase tracking-widest text-on-surface-variant font-bold pb-3 pr-6">Coupon</th>
+              <th class="text-left text-[10px] uppercase tracking-widest text-on-surface-variant font-bold pb-3">Timestamp</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (winner of winners; track winner.order; let last = $last) {
+              <tr class="group" [class.border-b]="!last" [class.border-white/5]="!last">
+                <!-- ORDER -->
+                <td class="py-4 pr-6">
+                  <div class="flex items-baseline gap-1">
+                    <span class="text-sm font-bold text-on-surface">
+                      {{ winner.order.toString().padStart(2, '0') }}
+                    </span>
+                    <span class="text-[10px] font-black"
+                      [class.text-primary]="winner.ordinalSuffix === 'ST'"
+                      [class.text-on-surface-variant]="winner.ordinalSuffix !== 'ST'">
+                      {{ winner.ordinalSuffix }}
+                    </span>
+                  </div>
+                </td>
+
+                <!-- PRIZE NAME -->
+                <td class="py-4 pr-6">
+                  <span class="text-sm font-semibold"
+                    [class.text-secondary]="winner.prizeColor === 'amber'"
+                    [class.text-tertiary]="winner.prizeColor === 'cyan'"
+                    [class.text-on-surface]="winner.prizeColor === 'default'">
+                    {{ winner.prizeName }}
+                  </span>
+                </td>
+
+                <!-- WINNER & ID -->
+                <td class="py-4 pr-6">
+                  <span class="text-sm text-on-surface">{{ winner.winnerName }}</span>
+                  <span class="text-sm text-on-surface-variant ml-2">{{ winner.maskedId }}</span>
+                </td>
+
+                <!-- ACCOUNT NUMBER -->
+                <td class="py-4 pr-6">
+                  <span class="text-sm text-on-surface-variant">{{ winner.accountNumber }}</span>
+                </td>
+
+                <!-- COUPON -->
+                <td class="py-4 pr-6">
+                  <span class="text-sm font-mono text-primary">{{ winner.coupon }}</span>
+                </td>
+
+                <!-- TIMESTAMP -->
+                <td class="py-4">
+                  <span class="text-sm font-mono text-on-surface-variant">{{ winner.timestamp }}</span>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Table footer -->
+      <div class="flex items-center justify-between mt-5 pt-4 border-t border-white/5">
+        <span class="text-xs text-on-surface-variant">Displaying 4 of 250 confirmed winners</span>
+        <button class="text-xs text-primary font-bold hover:underline underline-offset-2 transition-all">
+          View All Rows
+        </button>
+      </div>
+    </div>
+
+    <!-- ─── Exclusion Log Accordion ─── -->
+    <div class="bg-surface-low rounded-2xl border border-white/5">
+      <button (click)="toggleExclusionLog()"
+        class="w-full flex items-center justify-between p-6 text-left">
+        <div class="flex items-center gap-3">
+          <span class="icon-[lucide--shield-alert] w-5 h-5 text-primary"></span>
+          <span class="font-bold text-on-surface text-sm">Registro de Colisiones de Exclusión</span>
+        </div>
+        <span class="icon-[lucide--chevron-down] w-5 h-5 text-on-surface-variant transition-transform duration-200"
+          [class.rotate-180]="isExclusionLogOpen()"></span>
+      </button>
+
+      @if (isExclusionLogOpen()) {
+        <div class="px-6 pb-6 border-t border-white/5 pt-5">
+          <p class="text-xs text-on-surface-variant italic">
+            No se registraron colisiones de exclusión en este sorteo. Todos los cupones ganadores corresponden a participantes únicos.
+          </p>
+        </div>
+      }
+    </div>
+
+  </main>
+
+  <!-- ───────────── FOOTER ───────────── -->
+  <footer class="w-full max-w-screen-xl mx-auto px-10 py-6 border-t border-white/5 flex items-center justify-between flex-wrap gap-4">
+    <p class="text-[10px] uppercase tracking-widest text-on-surface-variant">
+      © 2024 The Kinetic Vault &nbsp;|&nbsp; Secure Audit Layer V4.2
+    </p>
+    <div class="flex items-center gap-6">
+      <a href="#" class="text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors">Security Protocol</a>
+      <a href="#" class="text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors">Compliance</a>
+      <a href="#" class="text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors">Privacy Policy</a>
+      <a href="#" class="text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors">Contact Support</a>
+    </div>
+  </footer>
+
+</div>
