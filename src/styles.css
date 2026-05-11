@@ -135,6 +135,17 @@
     }
   }
 
+  /* Slot machine digit spin */
+  .animate-slot-spin {
+    animation: slot-spin 0.18s ease-in-out infinite;
+  }
+
+  @keyframes slot-spin {
+    0%, 100% { transform: translateY(0) scaleY(1); opacity: 1; }
+    45%       { transform: translateY(-8px) scaleY(0.9); opacity: 0.4; }
+    55%       { transform: translateY(8px) scaleY(0.9); opacity: 0.4; }
+  }
+
   /* Status Chips */
   .status-chip {
     padding: 0.25rem 0.75rem;

@@ -13,4 +13,5 @@ export const routes: Routes = [
   { path: 'data-loader', loadComponent: () => import('./pages/data-loader/data-loader.component').then(m => m.DataLoaderComponent) },
   { path: 'audit-reports', loadComponent: () => import('./pages/audit-reports/audit-reports.component').then(m => m.AuditReportsComponent) },
   { path: 'lobby', loadComponent: () => import('./pages/lobby/lobby.component').then(m => m.LobbyComponent) },
+  { path: 'draw-arena', loadComponent: () => import('./pages/draw-arena/draw-arena.component').then(m => m.DrawArenaComponent) },
 ];
